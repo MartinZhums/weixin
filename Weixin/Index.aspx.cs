@@ -34,7 +34,7 @@ namespace Weixin
             string menu = sr.ReadToEnd();
             sr.Close();
             fs1.Close();
-            ow.HttpGet("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=access_token", menu);  
+            ow.HttpPOST("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=access_token", menu);  
         }
     }
 }

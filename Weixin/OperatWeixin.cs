@@ -63,7 +63,7 @@ namespace Weixin
             }
 
         }
-        public string HttpGet(string uri, string postData)
+        public string HttpPOST(string uri, string postData)
         {
             Stream outstream = null;
             Stream instream = null;
@@ -102,7 +102,7 @@ namespace Weixin
                 return string.Empty;
             }  
         }
-        public string HttpPOST(string uri)
+        public string HttpGET(string uri)
         {
             Stream instream = null;
             StreamReader sr = null;
