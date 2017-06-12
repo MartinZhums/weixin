@@ -50,7 +50,7 @@ namespace Weixin
             byte[] data = SHA1.Create().ComputeHash(buffer);
             string hash = BitConverter.ToString(data).Replace("-", "");
             hash = hash.ToLower();
-            if (hash == signature)
+            if (hash == signature.ToLower())
             {
                 signature = hash;
                 return true;
