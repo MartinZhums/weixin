@@ -10,17 +10,44 @@ namespace Weixin
 {
     public class OperatWeixin
     {
+        public class DictionarySort : System.Collections.IComparer
+        {
+            public int Compare(object oLeft, object oRight)
+            {
+                string sLeft = oLeft as string;
+                string sRight = oRight as string;
+                int iLeftLength = sLeft.Length;
+                int iRightLength = sRight.Length;
+                int index = 0;
+                while (index < iLeftLength && index < iRightLength)
+                {
+                    if (sLeft[index] < sRight[index])
+                        return -1;
+                    else if (sLeft[index] > sRight[index])
+                        return 1;
+                    else
+                        index++;
+                }
+                return iLeftLength - iRightLength;
+
+            }
+        }
         public bool checkSignature(string token, string timestamp, string nonce, string signature)
         {
             string[] a = { token, timestamp, nonce };
-            List<string> list = new List<string>();
-            list.Add(token);
-            list.Add(timestamp);
-            list.Add(nonce);
-            list.Sort();
-            string s = string.Join(",",list.ToArray());
+            ArrayList AL = new ArrayList();
+            AL.Add(token);
+            AL.Add(timestamp);
+            AL.Add(nonce);
+            AL.Sort(new DictionarySort());
+            string raw = "";
+            for (int i = 0; i < AL.Count; ++i)
+            {
+                raw += AL[i];
+            }
+
             SHA1 sha1 = new SHA1CryptoServiceProvider();
-            var buffer = Encoding.UTF8.GetBytes(s);
+            var buffer = Encoding.UTF8.GetBytes(raw);
             var data = SHA1.Create().ComputeHash(buffer);
             StringBuilder sb = new StringBuilder();
             foreach (var r in data)

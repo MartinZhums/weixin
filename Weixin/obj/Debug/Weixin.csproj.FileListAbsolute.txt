@@ -7,6 +7,5 @@ C:\Users\Administrator\Desktop\Weixin\Weixin\Weixin\obj\Debug\Weixin.pdb
 C:\Users\Administrator\Documents\GitHub\weixin\Weixin\bin\Weixin.dll.config
 C:\Users\Administrator\Documents\GitHub\weixin\Weixin\bin\Weixin.dll
 C:\Users\Administrator\Documents\GitHub\weixin\Weixin\bin\Weixin.pdb
-C:\Users\Administrator\Documents\GitHub\weixin\Weixin\obj\Debug\Weixin.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\GitHub\weixin\Weixin\obj\Debug\Weixin.dll
 C:\Users\Administrator\Documents\GitHub\weixin\Weixin\obj\Debug\Weixin.pdb
