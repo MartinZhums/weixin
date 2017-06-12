@@ -45,16 +45,12 @@ namespace Weixin
             {
                 raw += AL[i];
             }
-
             SHA1 sha1 = new SHA1CryptoServiceProvider();
-            var buffer = Encoding.UTF8.GetBytes(raw);
-            var data = SHA1.Create().ComputeHash(buffer);
-            StringBuilder sb = new StringBuilder();
-            foreach (var r in data)
-            {
-                sb.Append(r.ToString("X2"));
-            }
-            if (sb.ToString() == signature)
+            byte[] buffer = Encoding.UTF8.GetBytes(raw);
+            byte[] data = SHA1.Create().ComputeHash(buffer);
+            string hash = BitConverter.ToString(data).Replace("-", "");
+            hash = hash.ToLower();
+            if (hash == signature)
             {
                 return true;
             }
@@ -62,8 +58,6 @@ namespace Weixin
             {
                 return false;
             }
-
-            
         }
     }
 }
