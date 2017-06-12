@@ -17,9 +17,9 @@ namespace Weixin
             string signature = Request["signature"].ToString();
             OperatWeixin ow = new OperatWeixin();
 
-            if (ow.checkSignature(token, timestamp, nonce, signature))
+            if (ow.checkSignature(token, timestamp, nonce, ref signature))
             {
-                Response.Write("微信接入成功");
+                Response.Write("微信接入失败");
             }
             else
             {

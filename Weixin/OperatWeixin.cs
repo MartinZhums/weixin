@@ -32,7 +32,7 @@ namespace Weixin
 
             }
         }
-        public bool checkSignature(string token, string timestamp, string nonce, string signature)
+        public bool checkSignature(string token, string timestamp, string nonce, ref string signature)
         {
             string[] a = { token, timestamp, nonce };
             ArrayList AL = new ArrayList();
@@ -52,12 +52,14 @@ namespace Weixin
             hash = hash.ToLower();
             if (hash == signature)
             {
+                signature = hash;
                 return true;
             }
             else
             {
                 return false;
             }
+
         }
     }
 }
