@@ -32,7 +32,7 @@ namespace Weixin
 
             }
         }
-        public bool checkSignature(string token, string timestamp, string nonce, ref string signature)
+        public bool checkSignature(string token, string timestamp, string nonce, string signature)
         {
             string[] a = { token, timestamp, nonce };
             ArrayList AL = new ArrayList();
