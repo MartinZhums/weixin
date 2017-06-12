@@ -19,7 +19,7 @@ namespace Weixin
             //string nonce = Request["nonce"].ToString();
             //string signature = Request["signature"].ToString();
             OperatWeixin ow = new OperatWeixin();
-
+            //string a = ow.HttpGET("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5d560f982a31abb7&secret=5c5eb9c763b30bab2c1d938d7ef078d8");
             //if (ow.checkSignature(token, timestamp, nonce, signature))
             //{
             //    Response.Write(echoString);
@@ -34,7 +34,7 @@ namespace Weixin
             string menu = sr.ReadToEnd();
             sr.Close();
             fs1.Close();
-            ow.HttpPOST("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=access_token", menu);  
+            ow.HttpPOST("https://api.weixin.qq.com/cgi-bin/menu/create?SkmbjJtJz7ZkmM3Nek5N4l8CwmLLq7SRTD022jtOe8a2AYMm-JqA9aNr4R9GZ8UbFF0-UOvaA_3xjAmqIxhr9hXzhUFw2SUASUzocPdgY7NKCB5HtYiF-H1kqjGLxUpmDAYfAIAQNL", menu);  
         }
     }
 }
